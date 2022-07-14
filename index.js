@@ -36,14 +36,14 @@ module.exports = function (creater, params, cb) {
     creater.template('microP-temp/.browserslistrc', path.join(projectPath, '.browserslistrc'))
     creater.template('microP-temp/.editorconfig', path.join(projectPath, '.editorconfig'))
     creater.template('microP-temp/babel.config.js', path.join(projectPath, 'babel.config.js'))
-    creater.template('microP-temp/README', path.join(projectPath, 'README.md'))
+    creater.template('microP-temp/README.md', path.join(projectPath, 'README.md'))
     creater.template('microP-temp/gitignore', path.join(projectPath, '.gitignore'))
 
     creater.copy('microP-temp/public/favicon.ico', path.join(projectPath, 'public/favicon.ico'))
     creater.template('microP-temp/public/index.html', path.join(projectPath, 'public/index.html'), {
         projectId,
     })
-    creater.copy('microP-temp/src', path.join(projectPath, 'src'));
+    creater.copy('microP-temp/src', path.join(projectPath, 'src'))
 
     creater.fs.commit(() => {
         console.log()

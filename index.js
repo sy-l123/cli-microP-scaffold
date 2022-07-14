@@ -37,7 +37,7 @@ module.exports = function (creater, params, cb) {
     creater.template('microP-temp/.editorconfig', path.join(projectPath, '.editorconfig'))
     creater.template('microP-temp/babel.config.js', path.join(projectPath, 'babel.config.js'))
     creater.template('microP-temp/README.md', path.join(projectPath, 'README.md'))
-    creater.template('microP-temp/gitignore', path.join(projectPath, '.gitignore'))
+    creater.template('microP-temp/.gitignore', path.join(projectPath, '.gitignore'))
 
     creater.copy('microP-temp/public/favicon.ico', path.join(projectPath, 'public/favicon.ico'))
     creater.template('microP-temp/public/index.html', path.join(projectPath, 'public/index.html'), {

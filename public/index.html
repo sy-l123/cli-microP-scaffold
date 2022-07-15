@@ -7,7 +7,7 @@
     <!-- <% if (!BASE_URL) {%>
       <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <%}%> -->
-    <link rel="icon" href="<% if (!BASE_URL) ? BASE_URL : '' %>favicon.ico">
+    <link rel="icon" href="<% (!BASE_URL) ? BASE_URL : '' %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>

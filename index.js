@@ -1,10 +1,7 @@
-const fs = require('fs-extra')
+const fs = require('fs')
 const path = require('path')
-const chalk = require('chalk')
-const shelljs = require('shelljs')
-const ora = require('ora')
 
-module.exports = function (creater, params, cb) {
+module.exports = function (creater, params, chalk, shelljs, ora) {
     const {
         projectName,
         description,

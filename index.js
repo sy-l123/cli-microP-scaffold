@@ -17,7 +17,6 @@ module.exports = function (creater, params, chalk, shelljs, ora) {
     fs.mkdirSync(projectPath)
     fs.mkdirSync(sourceDir)
     fs.mkdirSync(publicDir)
-    fs.mkdirSync(path.join(sourceDir, 'pages'))
 
     creater.template(path.join(cwd, 'microP-temp/pkg'), path.join(projectPath, 'package.json'), {
         projectName,
@@ -46,7 +45,6 @@ module.exports = function (creater, params, chalk, shelljs, ora) {
         console.log()
         console.log(`${chalk.green('✔ ')}${chalk.grey(`创建项目: ${chalk.grey.bold(projectName)}`)}`)
         console.log(`${chalk.green('✔ ')}${chalk.grey(`创建源码目录: ${projectName}/${src}`)}`)
-        console.log(`${chalk.green('✔ ')}${chalk.grey(`创建页面目录: ${projectName}/${src}/pages`)}`)
 
         console.log(`${chalk.green('✔ ')}${chalk.grey(`创建文件: ${projectName}/package.json`)}`)
         console.log(`${chalk.green('✔ ')}${chalk.grey(`创建文件: ${projectName}/vue.config.js`)}`)

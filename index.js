@@ -61,11 +61,12 @@ module.exports = function (creater, params, chalk, shelljs, ora) {
         console.log(`${chalk.green('✔ ')}${chalk.grey(`拷贝源码: ${projectName}/${public}`)}`)
         console.log(`${chalk.green('✔ ')}${chalk.grey(`拷贝源码: ${projectName}/${src}`)}`)
 
-        // 目录切换
-        shelljs.cd(projectPath);
-        const command = 'npm install'
-        const installSpinner = ora(`执行安装项目依赖 ${chalk.cyan.bold(command)}, 需要一会儿...`).start()
+        
         try {
+            // 目录切换
+            shelljs.cd(projectPath);
+            const command = 'npm install'
+            const installSpinner = ora(`执行安装项目依赖 ${chalk.cyan.bold(command)}, 需要一会儿...`).start()
             const install = shelljs.exec(command, {
                 silent: true
             })
@@ -79,9 +80,7 @@ module.exports = function (creater, params, chalk, shelljs, ora) {
                 console.log(`${install.stderr}${install.stdout}`)
             }
         } catch (error) {
-            installSpinner.color = 'red'
-            installSpinner.fail(chalk.red('安装项目依赖失败，请自行重新安装！'))
-            console.log(`${install.stderr}${install.stdout}`)
+            console.log('安装项目依赖失败，请自行重新安装！error:', error)
         }
         console.log(chalk.green(`创建项目 ${chalk.green.bold(projectName)} 成功！`))
         console.log(chalk.green(`请进入项目目录 ${chalk.green.bold(projectName)} 开始工作吧！😝`))

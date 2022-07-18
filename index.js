@@ -19,28 +19,28 @@ module.exports = function (creater, params, chalk, shelljs, ora) {
     fs.mkdirSync(publicDir)
     fs.mkdirSync(path.join(sourceDir, 'pages'))
 
-    creater.template('microP-temp/pkg', path.join(projectPath, 'package.json'), {
+    creater.template(path.join(projectPath, 'microP-temp/pkg'), path.join(projectPath, 'package.json'), {
         projectName,
         description,
     })
 
-    creater.template('microP-temp/vueConf', path.join(projectPath, 'vue.config.js'), {
+    creater.template(path.join(projectPath, 'microP-temp/vueConf'), path.join(projectPath, 'vue.config.js'), {
         projectName,
     })
 
-    creater.template('microP-temp/.eslintrc.js', path.join(projectPath, '.eslintrc.json'))
-    creater.template('microP-temp/.eslintignore', path.join(projectPath, '.eslintignore'))
-    creater.template('microP-temp/.browserslistrc', path.join(projectPath, '.browserslistrc'))
-    creater.template('microP-temp/.editorconfig', path.join(projectPath, '.editorconfig'))
-    creater.template('microP-temp/babel.config.js', path.join(projectPath, 'babel.config.js'))
-    creater.template('microP-temp/README.md', path.join(projectPath, 'README.md'))
-    creater.template('microP-temp/.gitignore', path.join(projectPath, '.gitignore'))
+    creater.template(path.join(projectPath, 'microP-temp/.eslintrc.js'), path.join(projectPath, '.eslintrc.json'))
+    creater.template(path.join(projectPath, 'microP-temp/.eslintignore'), path.join(projectPath, '.eslintignore'))
+    creater.template(path.join(projectPath, 'microP-temp/.browserslistrc'), path.join(projectPath, '.browserslistrc'))
+    creater.template(path.join(projectPath, 'microP-temp/.editorconfig'), path.join(projectPath, '.editorconfig'))
+    creater.template(path.join(projectPath, 'microP-temp/babel.config.js'), path.join(projectPath, 'babel.config.js'))
+    creater.template(path.join(projectPath, 'microP-temp/README.md'), path.join(projectPath, 'README.md'))
+    creater.template(path.join(projectPath, 'microP-temp/.gitignore'), path.join(projectPath, '.gitignore'))
 
-    creater.copy('microP-temp/public/favicon.ico', path.join(projectPath, 'public/favicon.ico'))
-    creater.template('microP-temp/public/index.html', path.join(projectPath, 'public/index.html'), {
+    creater.copy(path.join(projectPath, 'microP-temp/public/favicon.ico'), path.join(projectPath, 'public/favicon.ico'))
+    creater.template(path.join(projectPath, 'microP-temp/public/index.html'), path.join(projectPath, 'public/index.html'), {
         projectId,
     })
-    creater.copy('microP-temp/src', path.join(projectPath, 'src'))
+    creater.copy(path.join(projectPath, 'microP-temp/src'), path.join(projectPath, 'src'))
 
     creater.fs.commit(() => {
         console.log()
